@@ -1,6 +1,6 @@
 import React from 'react'
+import{Link} from 'react-router-dom';
 
-export default function Navigation() {
 
   const navLinks = [
     {
@@ -25,13 +25,14 @@ export default function Navigation() {
     }
   ]
 
+  export default function Navigation() {
   return (
     <nav className="site-navigation">
       <span>BruhBook</span>
       <ul>
         { navLinks.map((link, index) => (
           <li key={index}>
-              {link.title}
+              <Link to={link.path}>{link.title}</Link>
           </li>
         ))}
       </ul>
