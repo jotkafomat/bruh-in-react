@@ -22,7 +22,18 @@
     padding-inline-start: 0;
     list-style-type: none;
     margin-right: 20px;
-    margin-top: 70px
+    margin-top: 70px;
+
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      color: $text-color;
+      padding: 40px 20px 20px 20px;
+
+      &:hover {
+        color: $text-link;
+      }
+    }
 
   }
 }
