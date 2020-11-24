@@ -13,15 +13,15 @@ import{Link} from 'react-router-dom';
     },
     {
       title: 'Log in',
-      path: '/log_in'
+      path: '/login'
     },
     {
       title: 'Log out',
-      path: '/log_out'
+      path: '/logout'
     },
     {
       title: 'Sign in',
-      path: '/sign_in'
+      path: '/signin'
     }
   ]
 
