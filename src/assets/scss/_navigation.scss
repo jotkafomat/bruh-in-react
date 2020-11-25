@@ -6,6 +6,11 @@
   justify-content: space-between;
   color: $text-color;
 
+  .bruh-logo{
+    width: 15%;
+
+  }
+
   span {
     font-size: 24px;
     font-weight: 500;
@@ -17,18 +22,12 @@
   ul {
     font-size: 24px;
     height: 100%;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
     list-style-type: none;
-    margin-right: 20px;
-    margin-top: 70px;
 
     a {
       text-decoration: none;
       font-size: 20px;
       color: $text-color;
-      padding: 40px 20px 20px 20px;
 
       &:hover {
         color: $text-link;

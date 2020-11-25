@@ -1,5 +1,6 @@
 import React from 'react'
 import{Link} from 'react-router-dom';
+import logo from '../pics/bruh.png';
 
 
   const navLinks = [
@@ -28,7 +29,7 @@ import{Link} from 'react-router-dom';
   export default function Navigation() {
   return (
     <nav className="site-navigation">
-      <span>BruhBook</span>
+      <span>BruhBook<img className="bruh-logo" src={logo} alt="Logo" /></span>
       <ul>
         { navLinks.map((link, index) => (
           <li key={index}>
