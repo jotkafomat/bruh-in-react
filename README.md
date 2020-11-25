@@ -9,6 +9,7 @@ In the project directory, you can run:
 ### `set ups`
 
 Run 'npm install' after cloning this repo
+For testing with cypress 'npm run cypress'
 
 ### `yarn start`
 
