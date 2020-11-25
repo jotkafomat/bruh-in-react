@@ -26,7 +26,7 @@ class Login extends Component {
            </div>
            <button handleClick={this.handleLogin}
                    name='login'
-                   className='login'
+                   class='login'
                    label='Log In'/>
          </form>
          <a href='/sign_up'>
