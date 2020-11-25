@@ -1,7 +1,8 @@
 import React from 'react';
 import Navigation from './components/navigation'
-import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import PageRenderer from './page-renderer'
+import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import PageRenderer from './page-renderer';
+
 
 function App() {
   return (
