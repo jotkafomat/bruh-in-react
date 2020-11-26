@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
+import ReactDOM from 'react-dom';
 import axios from "axios";
 
 class Login extends Component {
@@ -55,8 +57,11 @@ class Login extends Component {
             class="secondary" 
             label="Sign Up" />
         </a>
-        
+        <Link to="/log_in">
+         <button type='button'>Log In</button>
+         </Link>
       </div>
+      
     );
   }
 }

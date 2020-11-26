@@ -21,10 +21,6 @@ import{Link} from 'react-router-dom';
       path: '/logout'
     },
     {
-      title: 'Sign in',
-      path: '/signin'
-    },
-    {
       title: 'Time line',
       path: '/timeline'
     }
