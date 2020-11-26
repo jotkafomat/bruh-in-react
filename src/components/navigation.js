@@ -10,7 +10,7 @@ import{Link} from 'react-router-dom';
     },
     {
       title: 'Post',
-      path: '/post'
+      path: '/posts'
     },
     {
       title: 'Log in',
@@ -26,7 +26,7 @@ import{Link} from 'react-router-dom';
     },
     {
       title: 'Time line',
-      path: '/timeline'
+      path: '/post'
     }
   ]
 

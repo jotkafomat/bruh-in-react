@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import Navigation from './components/navigation';
 import {BrowserRouter as Router, Link, Switch, Route, Redirect } from 'react-router-dom';
 import PageRenderer from './page-renderer';
+import Post from './pages/post';
 import logo from './pics/bruh.png';
+
 
 
 class App extends Component {
@@ -31,6 +33,8 @@ class App extends Component {
           <Navigation />
           <Switch>
             <Route path="/:page" component={PageRenderer} />
+            <Route exact path="/post" render= { props => (
+               <Post {...props} loggedInStatus = {this.state.loggedInStatus} />)}/>
             <Route path="/" render={() => <Redirect to="/home"/>}/>
             <Route path="/log_in" render={ (props)=> 
               <Redirect to="/log-in" updateAuthState={this.updateAuthState} authToken={this.state.authToken} /> }/>
