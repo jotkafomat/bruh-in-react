@@ -1,8 +1,5 @@
 describe("post component", function () {
     beforeEach(function() {
-      cy.fixture('allPostsResponse.json').as('allPostsResponse')
-      cy.server()
-      cy.route('/api/v1/posts', '@allPostsResponse')
       cy.visit('localhost:3000')
     })
       it("shows a single post", function () {

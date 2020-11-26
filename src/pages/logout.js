@@ -1,11 +1,4 @@
-// import React from 'react'
-
-// export default function Home () {
-//   return <div>LogOut</div>
-// }
-
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 class Logout extends Component {
   constructor(props) {
@@ -20,9 +13,13 @@ class Logout extends Component {
 
   render() {
     return (
-      <a href='#' onClick={this.props.handleClick}>
-      {this.props.label}
-      </a>
+      <div>
+        <h1>Why did you log out?</h1>
+        <h2>You're going to miss all the Bruh bits</h2>
+        <a href='#' onClick={this.props.handleClick}>
+       {this.props.label}
+       </a>
+      </div>
     )
   }
 }
