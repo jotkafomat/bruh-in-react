@@ -8,7 +8,7 @@ class Logout extends Component {
 
   handleLogout(e) {
     e.preventDefault()
-    this.props.updateAuthToken(null)
+    this.props.updateAuthState(null)
   }
 
   render() {
@@ -16,11 +16,11 @@ class Logout extends Component {
       <div>
         <h1>Why did you log out?</h1>
         <h2>You're going to miss all the Bruh bits</h2>
-        <a href='#' onClick={this.props.handleClick}>
+        <a href='#' onClick={this.handleClick}>
        {this.props.label}
        </a>
       </div>
-    )
+    );
   }
 }
 

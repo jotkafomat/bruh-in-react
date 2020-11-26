@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom'
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom'
+import ReactDOM from "react-dom";
 import axios from "axios";
 
 class Login extends Component {
@@ -21,7 +21,7 @@ class Login extends Component {
       .then(function (response) {
         self.props.updateAuthToken(
           response.data.success.token, 
-          response.data.success.username)
+          response.data.success.username);
       })
       .catch(function (error) {
         console.log(error);
@@ -29,40 +29,64 @@ class Login extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1>Bruh log in</h1>
-        <form onSubmit={e => {e.preventDefault();}} className="form-login">
-          <div className="form-input">
-            <input id="email-input"  
-              label="Email" 
-              class="email" 
-              type="email" 
-              name="email" />
+    if (this.props.authToken) {
+      return <Redirect to="/posts" />;
+    } else {
+      return (
+        <div className="form-container">
+          <h4>Bruh Log In</h4>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+            }}
+            className="form-login"
+          >
+            <div className="form-group">
+              <input
+                id="email-input"
+                name="email"
+                placeholder="email"
+                type="text"
+                required="required"
+                className="email form-control"
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                id="password-input"
+                name="password"
+                placeholder="password"
+                type="password"
+                className="password form-control"
+                required="required"
+              ></input>
+            </div>
+            <div className='row'>
+              <div className='col'>
+              <div className="form-group">
+              <button
+                name="login"
+                type="submit"
+                className="login-button btn btn-primary"
+                onClick={this.handleLogin}>
+                Login
+              </button>
+            </div>
+              </div>
+              <div className='col'>
+                <Link to="/">
+                  <button name="signup" className="btn btn-primary" label="Sign Up">
+                    Sign up
+                  </button>
+                </Link>
+              </div>
+            </div>
 
-            <input id="password-input" 
-              label="Password"
-              class="password"
-              type="password"
-              name="password" />
-          </div>
-            <button type="submit" onClick={this.handleLogin}
-            label="Log In"
-            class="login"
-            name="login" />
-        </form>
+          </form>
 
-        <a href="/sign_up">
-          <button name="signup" 
-            class="secondary" 
-            label="Sign Up" />
-        </a>
-        <Link to="/log_in">
-         <button type='button'>Log In</button>
-         </Link>
-      </div>
-      
-    );
+        </div>
+      );
+    }
   }
 }
 export default Login;

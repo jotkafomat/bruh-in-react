@@ -1,63 +1,92 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios'
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
   constructor(props) {
-    super(props)
-    this.handleLogin = this.handleLogin.bind(this)
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleLogin(e) {
-    e.preventDefault()
-    let self = this
-    axios.post('/api/v1/auths',{
+    e.preventDefault();
+    let self = this;
+    axios
+      .post("/api/v1/auths", {
         auth: {
-          email: document.getElementById('email-input').value,
-          password: document.getElementById('password-input').value
-        }
-    })
-    .then(function(response) {
-      self.props.updateAuthToken(response.data.success.token, response.data.success.username)
-    })
-    .catch(function(error) {
-      console.log(error)
-    })
+          email: document.getElementById("email-input").value,
+          password: document.getElementById("password-input").value,
+        },
+      })
+      .then(function (response) {
+        self.props.updateAuthState(
+          response.data.success.token,
+          response.data.success.username
+        );
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
-    return (
-      <div>
-      <h3>Become a Bruh</h3>
-      <form onSubmit={e => {e.preventDefault();}} className="form-signup">
-        <div className='form-input'>
-          <input  id="email-input"
-                label="Email"
-                className="email"
-                type="email"
-                name="email" placeholder="email" />
-                <br></br>
-          <input id="username-input"
-                label="Username"
-                className="username"
+    if (this.props.authToken) {
+      return <Redirect to="/posts" />;
+    } else {
+      return (
+        <div className="form-container">
+          <h3>Sign Up</h3>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+            }}
+            className="form-signup"
+          >
+            <div className="form-group">
+              <input
+                id="email-input"
+                name="email"
+                placeholder="email"
                 type="text"
-                name="username" placeholder="username" />
-                  <br></br>
-          <input id="password-input"
-                label="Password"
-                className="password"
+                required="required"
+                className="email form-control"
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                id="username-input"
+                name="username"
+                placeholder="username"
+                type="text"
+                className="username form-control"
+                required="required"
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                id="password-input"
+                name="password"
+                placeholder="password"
                 type="password"
-                name="password" placeholder="password" />
+                className="password form-control"
+                required="required"
+              ></input>
+            </div>
+            <div className="form-group">
+              <button
+                name="signup"
+                type="submit"
+                className="signup-button btn btn-primary"
+                onClick={this.handleSignUp}>
+                Sign Up
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-      <a href='/sign_up'>
-        <button name='signup'
-                className='secondary'
-                label='Sign Up'>Be a Bruh</button>
-      </a>
-      </div>
-    )
+      );
+    }
   }
-
 }
+
 export default SignUp;

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Navigation from './components/navigation'
-import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Navigation from './components/navigation';
+import {BrowserRouter as Router, Link, Switch, Route, Redirect } from 'react-router-dom';
 import PageRenderer from './page-renderer';
 import logo from './pics/bruh.png';
 
@@ -12,10 +12,10 @@ class App extends Component {
       authToken: null,
       username: null
     }
-    this.updateAuthToken = this.updateAuthToken.bind(this)
+    this.updateAuthState = this.updateAuthState.bind(this)
   }
 
-  updateAuthToken(token, username) {
+  updateAuthState(token, username) {
     console.log(token, username)
     this.setState({
       authToken: token,
