@@ -1,9 +1,3 @@
-// import React from 'react'
-
-// export default function Home () {
-//   return <div>LogOut</div>
-// }
-
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 

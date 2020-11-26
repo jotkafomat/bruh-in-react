@@ -7,3 +7,18 @@ body {
   margin: 0;
   background-color: rgb(29, 126, 226)
 }
+
+.App {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 15% auto 15%;
+  grid-template-rows: 9% auto 5%;
+  height: 100vh;
+  width: auto;
+  footer {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    text-align: center;
+  }
+}
+

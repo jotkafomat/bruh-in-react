@@ -2,6 +2,7 @@ import React from 'react'
 import{Link} from 'react-router-dom';
 
 
+
   const navLinks = [
     {
       title: 'Home',
@@ -22,16 +23,19 @@ import{Link} from 'react-router-dom';
     {
       title: 'Sign in',
       path: '/signin'
+    },
+    {
+      title: 'Time line',
+      path: '/timeline'
     }
   ]
 
   export default function Navigation() {
   return (
     <nav className="site-navigation">
-      <span>BruhBook</span>
       <ul>
         { navLinks.map((link, index) => (
-          <li key={index}>
+          <li className="nav-links" key={index}>
               <Link to={link.path}>{link.title}</Link>
           </li>
         ))}
