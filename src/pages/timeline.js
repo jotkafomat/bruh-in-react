@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Post from "./post";
 import axios from "axios";
 
@@ -18,11 +17,11 @@ class AllPosts extends Component {
   getPosts() {
     var self = this;
     axios({
-      url: "https://bruhbook-api.herokuapp.com",
+      url: "'/api/v1/posts'",
       mode: "no-cors",
     })
       .then(function (response) {
-        console.log(response);
+        self.setState({posts: response.data})
       })
       .catch(function (error) {
         console.log(error);
@@ -30,18 +29,17 @@ class AllPosts extends Component {
   }
 
   render() {
-    console.log(this.state.posts);
+    console.log("this state", this.state.posts)
     if (this.state.posts !== null) {
       return (
         <div className="post-list">
           <h1>Timeline</h1>
           {this.state.posts.map((post) => (
             <Post
-              id={post.id}
+              key={post.id}
               message={post.message}
-              username={post.username}
-              created_at={post.created_at}
-            />
+              username={post.user.name}
+              created_at={post.created_at}/>
           ))}
         </div>
       );
