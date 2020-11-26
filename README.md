@@ -8,8 +8,9 @@ In the project directory, you can run:
 
 ### `set ups`
 
-Run 'npm install' after cloning this repo
-For testing with cypress 'npm run cypress'
+Run 'npm install' after cloning this repo\
+For testing with cypress 'npm run cypress'\
+Installing axios npm install axios
 
 ### `yarn start`
 
