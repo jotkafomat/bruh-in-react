@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Post from './singlePost'
+import Post from './post'
 import axios from 'axios'
 
 class AllPosts extends Component {
