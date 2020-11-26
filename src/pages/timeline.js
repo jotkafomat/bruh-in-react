@@ -17,11 +17,11 @@ class AllPosts extends Component {
   getPosts() {
     var self = this;
     axios({
-      url: "'/api/v1/posts'",
+      url: "/posts",
       mode: "no-cors",
     })
       .then(function (response) {
-        self.setState({posts: response.data})
+        self.setState({posts: response.data.posts})
       })
       .catch(function (error) {
         console.log(error);

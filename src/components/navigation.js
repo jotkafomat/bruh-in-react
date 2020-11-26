@@ -26,7 +26,7 @@ import{Link} from 'react-router-dom';
     },
     {
       title: 'Time line',
-      path: '/timeline'
+      path: '/posts'
     }
   ]
 
