@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Post extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            message: '',
-            username: '',
-            created_at: '',
-      }
-    }
+  
     render() {
       return (
         <div className='post'>
@@ -25,4 +18,5 @@ class Post extends Component {
         )
     }   
 }
+
 export default Post;

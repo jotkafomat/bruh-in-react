@@ -18,7 +18,7 @@ class AllPosts extends Component {
   getPosts() {
     var self = this;
     axios({
-      url: "https://bruhbook-api.herokuapp.com",
+      url: "'/api/v1/posts'",
       mode: "no-cors",
     })
       .then(function (response) {
@@ -39,9 +39,8 @@ class AllPosts extends Component {
             <Post
               key={post.id}
               message={post.message}
-              username={post.username}
-              created_at={post.created_at}
-            />
+              username={post.user.name}
+              created_at={post.created_at}/>
           ))}
         </div>
       );
