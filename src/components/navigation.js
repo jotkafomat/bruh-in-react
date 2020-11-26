@@ -27,7 +27,12 @@ import{Link} from 'react-router-dom';
     {
       title: 'Time line',
       path: '/posts'
+    },
+    {
+      title: 'Bruhs',
+      path: '/users'
     }
+
   ]
 
   export default function Navigation() {
