@@ -21,6 +21,10 @@ import{Link} from 'react-router-dom';
       path: '/logout'
     },
     {
+      title: 'Sign up',
+      path: '/signup'
+    },
+    {
       title: 'Time line',
       path: '/timeline'
     }

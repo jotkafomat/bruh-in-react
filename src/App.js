@@ -3,9 +3,7 @@ import Navigation from './components/navigation'
 import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import PageRenderer from './page-renderer';
 import logo from './pics/bruh.png';
-// import Login from './components/login';
-// import Post from './components/singlePost';
-// import AllPosts from './components/allPosts';
+
 
 class App extends Component {
   constructor(props){
