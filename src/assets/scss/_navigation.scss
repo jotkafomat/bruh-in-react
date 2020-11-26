@@ -1,38 +1,49 @@
-.site-navigation {
+header {
+  background: white;
+  color: $text-color;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
   height: 65px;
   width: 100%;
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  color: $text-color;
-
-  .bruh-logo{
-    width: 15%;
-
+  img {
+    width: 3%;
   }
+}
 
-  span {
-    font-size: 24px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-  }
+.site-navigation {
+  margin: 0;
+  position: sticky;
+  top: 0px;
 
-  ul {
-    font-size: 24px;
+  .nav-links {
+    margin: 0;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
     height: 100%;
     list-style-type: none;
+    align-items: center;
+    background-color: deeppink;
 
-    a {
-      text-decoration: none;
-      font-size: 20px;
-      color: $text-color;
+    li {
+      height: 200px;
+      b
+      &:empty {
+        height: 0;
+        border: none;
+      }
 
-      &:hover {
-        color: $text-link;
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        position: sticky;
+        top: 0px;
+
+        &:hover {
+          color: $text-link;
+        }
       }
     }
-
   }
 }
