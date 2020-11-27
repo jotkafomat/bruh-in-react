@@ -15,13 +15,20 @@ import Signup from './pages/Signup';
 import Signin from "./pages/Signin.js";
 import CreatePost from './pages/CreatePost.js';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+export default class App extends Component {
+  constructor() {
+    super();
     this.state = {
-      logged_in: false,
-      user: {},
-    };
+      loggedInStatus: "NOT_LOGGED_IN",
+      user: {}
+    }
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+  handleLogin(data) {
+    this.setState({
+      loggedInStatus: "LOGGED_IN",
+      user: data.user
+    });
   }
 
   render() {
@@ -54,5 +61,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
