@@ -10,7 +10,7 @@ class Login extends Component {
   handleLogin(e) {
     e.preventDefault();
     let self = this;
-        axios.post('/api/v1/auths',{
+        axios.post('https://bruhbook-api.herokuapp.com/login',{
           auth: {
             email: document.getElementById('email-input').value,
             password: document.getElementById('password-input').value

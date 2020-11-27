@@ -11,6 +11,7 @@ import logo from "./pics/bruh.png";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
 import Signin from "./pages/Signin.js";
+import CreatePost from './pages/CreatePost.js';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class App extends Component {
           </header>
           <Navigation />
           <Switch>
+            <Route path="/createpost" component={CreatePost}/> 
             <Route path="/posts" render={(props) => <Posts />} />
             <Route path="/users" render={(props) => <Users />} />
             <Route path="/:page" component={PageRenderer} />
