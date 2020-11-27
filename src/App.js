@@ -52,7 +52,7 @@ export default class App extends Component {
             <Route path="/:page" component={PageRenderer} />
             <Route path="/" render={() => <Redirect to="/home" />} />
             <Route path="/signup" render = { props => (
-              <Signup {...props} handleLogin = {this.handleLogin} loggedInStatus = {this.state.loggedInStatus} />)}/>
+              <Signup {...props} handleLogin = {this.handleLogin} logged_in = {this.state.logged_in} />)}/>
             <Route path="/signin" render={(props) => (
               <Signin {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
             <Route component={() => 404} />
@@ -64,3 +64,4 @@ export default class App extends Component {
     );
   }
 }
+

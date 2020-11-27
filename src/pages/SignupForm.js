@@ -4,84 +4,75 @@ export class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      values: {
-        firstName: "",
-        lastName: "",
+      user: {
+        name: "",
         email: "",
         password: "",
-      },
-      isSubmitting: false,
-      isError: false,
+        password_confirmation: ""
+      }    
     };
 
   }
 
   handleInputChange = (e) =>
     this.setState({
-      values: { ...this.state.values, [e.target.name]: e.target.value },
+      user: { ...this.state.user, [e.target.name]: e.target.value },
     });
 
   submitForm = async (e) => {
     if (e) e.preventDefault();
-    this.setState({ isSubmitting: true });
     const res = await fetch("https://bruhbook-api.herokuapp.com/signup", {
       method: "POST",
-      body: JSON.stringify(this.state.values),
+      body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    this.setState({ isSubmitting: false });
     const data = await res.json();
     if (data.status !== 500 ) {
-      this.setState({ message: data.success })
+      this.setState({ user: data.user })
       this.props.handleSuccessfulAuth(data)
-    } else {
-      this.setState({ message: data.status, isError: true })
-    }
-
+    } 
   };
 
   render() {
-    let errorMessage = this.state.isError ? "Email is already in use" : ""
     return (
       <div>
         <form onSubmit={this.submitForm}>
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
-            name="firstName"
+            name="name"
             onChange={this.handleInputChange}
-            value={this.state.values.firstName}
-            required
-          />
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            onChange={this.handleInputChange}
-            value={this.state.values.lastName}
+            value={this.state.user.name}
             required
           />
           <label htmlFor="email">Email</label>
           <input
-            type="email"
+            type="text"
             name="email"
             onChange={this.handleInputChange}
-            value={this.state.values.email}
+            value={this.state.user.email}
             required
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="name">Password</label>
           <input
             type="password"
             name="password"
             onChange={this.handleInputChange}
-            value={this.state.values.password}
+            value={this.state.user.password}
+            required
+          />
+          <label htmlFor="name">Password Confirmation</label>
+          <input
+            type="password"
+            name="password_confirmation"
+            onChange={this.handleInputChange}
+            value={this.state.user.password_confirmation}
             required
           />
           <input type="submit" className="submit" />
         </form>
-        <div>{errorMessage}</div>
       </div>
     );
   }
