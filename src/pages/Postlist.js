@@ -40,7 +40,7 @@ class Postlist extends React.Component {
       return (
         <section>
           {posts.map((post) => (
-            <article className="post" key={post.id}>
+            <article className="container" key={post.id}>
               <p>{moment(post.created_at).format('MMMM Do YYYY, h:mm a')}</p>
               <p>{post.text_content}</p>
               <p>{post.user_id}</p>
