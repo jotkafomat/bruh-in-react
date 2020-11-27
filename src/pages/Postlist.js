@@ -39,11 +39,10 @@ class Postlist extends React.Component {
     } else {
       return (
         <section>
-          {posts.map((post) => (
-            <article className="container" key={post.id}>
-              <p>{moment(post.created_at).format('MMMM Do YYYY, h:mm a')}</p>
-              <p>{post.text_content}</p>
-              <p>{post.user_id}</p>
+          {posts.map((postname) => (
+            <article className="container" key={postname.post.id}>
+              <p>{postname.name}, on {moment(postname.post.created_at).format('MMMM Do YYYY, h:mm a')}, said:</p>
+              <p>{postname.post.text_content}</p>
             </article>
           ))}
         </section>

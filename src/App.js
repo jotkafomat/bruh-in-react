@@ -21,14 +21,14 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      loggedInStatus: "NOT_LOGGED_IN",
+      logged_in: false,
       user: {}
     }
     this.handleLogin = this.handleLogin.bind(this);
   }
   handleLogin(data) {
     this.setState({
-      loggedInStatus: "LOGGED_IN",
+      logged_in: true,
       user: data.user
     });
   }

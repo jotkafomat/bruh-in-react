@@ -4,47 +4,49 @@ export class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      values: {
-        message: "",
+      post: {
+        text_content: "",
+        user_id: null
       },
-      isSubmitting: false,
-      isError: false,
     };
   }
   handleInputChange = (e) =>
     this.setState({
-      values: { ...this.state.values, [e.target.name]: e.target.value },
+      post: { ...this.state.post, [e.target.name]: e.target.value },
     });
 
   submitForm = async (e) => {
     if (e) e.preventDefault();
-    this.setState({ isSubmitting: true });
     const res = await fetch("https://bruhbook-api.herokuapp.com/posts", {
       method: "POST",
-      body: JSON.stringify(this.state.values),
+      body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    this.setState({ isSubmitting: false });
     const data = await res.json();
     if (!data.hasOwnProperty("error")) {
-      this.setState({ message: data.success })
+      this.setState({ post: data.post })
       window.location.href = 'http://localhost:3000/posts';
-    } else {
-      this.setState({ message: data.error, isError: true })
     }
   };
 
   render() {
     return (
       <form onSubmit={this.submitForm}>
-        <label htmlFor="message">Create Post</label>
+        <label htmlFor="text_content">Content: </label>
         <input
           type="textarea"
-          name="message"
+          name="text_content"
           onChange={this.handleInputChange}
-          value={this.state.values.message}
+          value={this.state.post.text_content}
+        />
+        <label htmlFor="user_id">User ID: </label>
+        <input
+          type="textarea"
+          name="user_id"
+          onChange={this.handleInputChange}
+          value={this.state.post.user_id}
           required
         />
         <input type="submit" className="submit" />
