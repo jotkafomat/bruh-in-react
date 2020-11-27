@@ -7,6 +7,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import PageRenderer from "./page-renderer";
+import Home from './pages/Home';
 import logo from "./pics/bruh.png";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
@@ -33,6 +34,8 @@ class App extends Component {
           </header>
           <Navigation />
           <Switch>
+          <Route exact path="/" render = { props => (<Home {...props} handleLogin = {this.handleLogin} 
+              loggedInStatus = {this.state.loggedInStatus} />)}/>
             <Route path="/createpost" component={CreatePost}/> 
             <Route path="/posts" render={(props) => <Posts />} />
             <Route path="/users" render={(props) => <Users />} />
