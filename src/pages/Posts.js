@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Postlist from "../components/Postlist";
+import Postlist from "./Postlist";
 
 
 export class Posts extends Component {

@@ -9,10 +9,6 @@ import{Link} from 'react-router-dom';
       path: '/'
     },
     {
-      title: 'Post',
-      path: '/post'
-    },
-    {
       title: 'Log in',
       path: '/login'
     },
