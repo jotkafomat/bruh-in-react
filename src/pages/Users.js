@@ -5,7 +5,7 @@ import Userlist from "./Userlist.js";
 export class Users extends Component {
   render() {
     return (
-      <div>
+      <div className="main-content">
         <h1>Bruhs</h1>
         <Userlist/>
       </div>

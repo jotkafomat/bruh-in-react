@@ -5,7 +5,7 @@ import Postlist from "./Postlist";
 export class Posts extends Component {
   render() {
     return (
-      <div>
+      <div className="main-content">
         <h1>Posts</h1>
         <Postlist/>
       </div>

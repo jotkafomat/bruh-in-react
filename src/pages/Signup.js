@@ -14,7 +14,7 @@ export class Signup extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="main-content">
         <h1>Become A Bruh</h1>
         <SignupForm handleSuccessfulAuth={this.handleSuccessfulAuth}/>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navigation from "./components/navigation";
 import logo from "./pics/bruh.png";
+import advert from "./pics/singles-img.jpg";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,7 @@ import Users from "./pages/Users";
 import CreatePost from './pages/CreatePost.js';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
+
 
 export default class App extends Component {
   constructor() {
@@ -55,6 +57,7 @@ export default class App extends Component {
               <Signin {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
             <Route component={() => 404} />
           </Switch>
+          <div className="right-content"><img src={advert} alt="advert" /></div>
           <footer>Bruhbook &reg; 2020</footer>
         </div>
       </Router>

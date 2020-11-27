@@ -40,7 +40,7 @@ class Userlist extends React.Component {
       return (
         <section>
           {users.map((user) => (
-            <article className="user" key={user.id}>
+            <article className="container" key={user.id}>
               <p>{moment(user.created_at).format('MMMM Do YYYY, h:mm a')}</p>
               <p>{user.name}</p>
               <p>{user.email}</p>

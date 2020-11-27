@@ -5,7 +5,7 @@ import PostForm from "./PostForm.js";
 export class CreatePost extends Component {
   render() {
     return (
-      <div>
+      <div className="main-content">
         <h1>Create a Post</h1>
           <PostForm/>
       </div>

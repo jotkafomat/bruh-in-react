@@ -14,7 +14,7 @@ export class Signin extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="main-content">
         <h1>Sign in</h1>
         <SigninForm handleSuccessfulAuth={this.handleSuccessfulAuth}/>
       </div>

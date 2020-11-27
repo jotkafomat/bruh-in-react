@@ -39,7 +39,7 @@ export class SigninForm extends Component {
   render() {
     let errorMessage = this.state.message === 401 ? "Incorrect email or password" : ""
     return (
-      <div>
+      <div >
       <form onSubmit={this.submitForm}>
         <label htmlFor="email">Email</label>
         <input
@@ -49,7 +49,7 @@ export class SigninForm extends Component {
           value={this.state.values.email}
           required
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Password  </label>
         <input
           type="password"
           name="password"

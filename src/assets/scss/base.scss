@@ -1,6 +1,10 @@
 @import './_variables';
 @import './_navigation';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Sagoe UI",Roboto,"Helvetica Neue, Arial, sans-serif";
   font-weight: 500;
@@ -12,9 +16,22 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 15% auto 15%;
-  grid-template-rows: 9% auto 5%;
+  grid-template-rows: 12% auto 5%;
   height: 100vh;
   width: auto;
+  .main-content{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+  }
+  .container {
+    background-color: #edeef0;
+    margin: 1% auto;
+    border: 3px solid grey;
+    width: 60%;
+    
+  }
+
   footer {
     grid-row: 3 / 4;
     grid-column: 1 / 4;

@@ -21,6 +21,10 @@ import{Link} from 'react-router-dom';
       path: '/Posts'
     },
     {
+      title: 'Post',
+      path: '/createpost'
+    },
+    {
       title: 'Bruhs',
       path: '/users'
     },
@@ -33,13 +37,13 @@ import{Link} from 'react-router-dom';
 
   export default function Navigation() {
   return (
-    <nav className="site-navigation">
-      <ul>
+    <div className="site-navigation">
+      <ul className="nav-links">
         { navLinks.map((link, index) => (
-          <li className="nav-links" key={index}>
+          <button  key={index}>
               <Link to={link.path}>{link.title}</Link>
-          </li>
+          </button>
         ))}
       </ul>
-    </nav>)
+    </div>)
 }
