@@ -49,9 +49,9 @@ export default class App extends Component {
             <Route path="/users" render={(props) => <Users />} />
             <Route path="/:page" component={PageRenderer} />
             <Route path="/" render={() => <Redirect to="/home" />} />
-            <Route exact path="/signup" render = { props => (
+            <Route path="/signup" render = { props => (
               <Signup {...props} handleLogin = {this.handleLogin} loggedInStatus = {this.state.loggedInStatus} />)}/>
-            <Route exact path="/signin" render={(props) => (
+            <Route path="/signin" render={(props) => (
               <Signin {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>)}/>
             <Route component={() => 404} />
           </Switch>

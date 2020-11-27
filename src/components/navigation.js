@@ -10,15 +10,15 @@ import{Link} from 'react-router-dom';
     },
     {
       title: 'Sign in',
-      path: '/signin'
+      path: '/Signin'
     },
     {
       title: 'Sign up',
-      path: '/signup'
+      path: '/Signup'
     },
     {
       title: 'Time line',
-      path: '/posts'
+      path: '/Posts'
     },
     {
       title: 'Bruhs',
