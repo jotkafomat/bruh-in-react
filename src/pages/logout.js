@@ -13,7 +13,7 @@ class Logout extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main-content">
         <h1>Why did you log out?</h1>
         <h2>You're going to miss all the Bruh bits</h2>
         <a href='#' onClick={this.props.handleClick}>

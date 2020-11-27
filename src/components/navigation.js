@@ -9,36 +9,41 @@ import{Link} from 'react-router-dom';
       path: '/'
     },
     {
-      title: 'Post',
-      path: '/post'
+      title: 'Sign in',
+      path: '/Signin'
     },
     {
-      title: 'Log in',
-      path: '/login'
+      title: 'Sign up',
+      path: '/Signup'
+    },
+    {
+      title: 'Time line',
+      path: '/Posts'
+    },
+    {
+      title: 'Post',
+      path: '/createpost'
+    },
+    {
+      title: 'Bruhs',
+      path: '/users'
     },
     {
       title: 'Log out',
       path: '/logout'
     },
-    {
-      title: 'Sign in',
-      path: '/signin'
-    },
-    {
-      title: 'Time line',
-      path: '/posts'
-    }
+
   ]
 
   export default function Navigation() {
   return (
-    <nav className="site-navigation">
-      <ul>
+    <div className="site-navigation">
+      <ul className="nav-links">
         { navLinks.map((link, index) => (
-          <li className="nav-links" key={index}>
+          <button  key={index}>
               <Link to={link.path}>{link.title}</Link>
-          </li>
+          </button>
         ))}
       </ul>
-    </nav>)
+    </div>)
 }

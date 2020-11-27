@@ -11,39 +11,46 @@ header {
 }
 
 .site-navigation {
-  margin: 0;
   position: sticky;
-  top: 0px;
-
+  top: 0;
   .nav-links {
+    position: sticky;
+    top: 0;
     margin: 0;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     height: 100%;
     list-style-type: none;
     align-items: center;
-    background-color: deeppink;
-
-    li {
-      height: 200px;
-      b
-      &:empty {
-        height: 0;
-        border: none;
-      }
-
+    button {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      background-color: #edeef0;
+    }
       a {
         text-decoration: none;
         font-size: 20px;
         color: black;
         text-align: center;
-        position: sticky;
-        top: 0px;
-
         &:hover {
           color: $text-link;
         }
-      }
     }
+  }
+}
+
+.right-content {
+  background-size: 100%;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  img{
+    background-repeat: repeat;
+    height: 100vh; 
+    width: 100%; 
+    object-fit: contain;
+    
   }
 }

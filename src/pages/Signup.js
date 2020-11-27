@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SigninForm from './SignInForm'
+import SignupForm from './SignupForm'
 
-export class Signin extends Component {
+export class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = { sent: "" };
@@ -15,11 +15,11 @@ export class Signin extends Component {
   render() {
     return (
       <div className="main-content">
-        <h1>Sign in</h1>
-        <SigninForm handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+        <h1>Become A Bruh</h1>
+        <SignupForm handleSuccessfulAuth={this.handleSuccessfulAuth}/>
       </div>
     );
   }
 }
 
-export default Signin;
+export default Signup;
