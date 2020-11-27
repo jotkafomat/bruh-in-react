@@ -11,9 +11,9 @@ import PageRenderer from "./page-renderer";
 import Home from './pages/Home';
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
-import Signup from './pages/Signup';
-import Signin from "./pages/Signin.js";
 import CreatePost from './pages/CreatePost.js';
+import Signup from './pages/Signup';
+import Signin from './pages/Signin';
 
 export default class App extends Component {
   constructor() {
