@@ -20,7 +20,7 @@ export class SigninForm extends Component {
   submitForm = async (e) => {
     if (e) e.preventDefault();
     this.setState({ isSubmitting: true });
-    const res = await fetch("http://localhost:3001/api/v1/sessions", {
+    const res = await fetch("https://bruhbook-api.herokuapp.com/login", {
       method: "POST",
       body: JSON.stringify(this.state.values),
       headers: {

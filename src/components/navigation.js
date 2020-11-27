@@ -9,16 +9,12 @@ import{Link} from 'react-router-dom';
       path: '/'
     },
     {
-      title: 'Log in',
-      path: '/login'
-    },
-    {
-      title: 'Log out',
-      path: '/logout'
-    },
-    {
       title: 'Sign in',
       path: '/signin'
+    },
+    {
+      title: 'Sign up',
+      path: '/signup'
     },
     {
       title: 'Time line',
@@ -27,7 +23,11 @@ import{Link} from 'react-router-dom';
     {
       title: 'Bruhs',
       path: '/users'
-    }
+    },
+    {
+      title: 'Log out',
+      path: '/logout'
+    },
 
   ]
 
